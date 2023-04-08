@@ -27,7 +27,6 @@ export const PAGES = {
   },
 } as const
 
-
 type PageObjectType = {
   children: ReactNode
   path: string
@@ -83,3 +82,27 @@ export const SATISFIES_PAGES = {
     },
   },
 } satisfies Record<string, PageObjectType>
+
+export const SATISFIES_AS_CONST_PAGES = {
+  home: {
+    children: <Home />,
+    path: '/',
+    seo: {
+      title: 'TS TIPS | Home',
+    },
+  },
+  generics: {
+    children: <GenericsPage />,
+    path: '/generics',
+    seo: {
+      title: 'TS TIPS | Generics',
+    },
+  },
+  satisfies: {
+    children: <SatisfiesPage />,
+    path: '/satisfies',
+    seo: {
+      title: 'TS TIPS | Satisfies',
+    },
+  },
+} as const satisfies Record<string, PageObjectType>
